@@ -1,0 +1,32 @@
+logging:
+  level:
+    root: INFO
+    web: DEBUG
+    org:
+      springframework:
+        data: DEBUG
+
+jwt:
+  secretKey: 11111111-1111-1111-1111-111111111111
+  validityInMs: 3600000
+
+spring:
+  profiles:
+    active: "prod"
+  data:
+    mongodb:
+      database: challenge_koombea
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
+      group-id: challenge
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: app.josue.challenge_koombea.domain.topic
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
