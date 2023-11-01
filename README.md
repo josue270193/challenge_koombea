@@ -1,5 +1,7 @@
 # Challenge KOOMBEA
 
+A Java project
+
 ## Component / Tools / Library
 - Java 17
 - Spring Boot 3
