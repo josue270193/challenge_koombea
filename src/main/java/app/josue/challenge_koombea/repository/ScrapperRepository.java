@@ -10,7 +10,7 @@ public interface ScrapperRepository extends ReactiveMongoRepository<ScrapperEnti
 
   Flux<ScrapperEntity> findByUsername(String username, Pageable pageable);
 
-  Mono<ScrapperEntity> findByUsernameAndUrl(String username, String url);
+  Flux<ScrapperEntity> findByUsernameAndUrlAndIsDoneFalse(String username, String url);
 
   Mono<ScrapperEntity> findByUrlAndIsDone(String url, Boolean isDone);
 

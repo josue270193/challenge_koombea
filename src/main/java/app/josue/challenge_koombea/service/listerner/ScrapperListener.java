@@ -40,7 +40,7 @@ public class ScrapperListener {
     String finalError = error;
     Mono.just(data)
         .doOnNext(topic -> log.info("Topic: {}", topic))
-        .flatMap(topic -> scrapperRepository.findByUsernameAndUrl(topic.getUsername(), topic.getUrl()))
+        .flatMapMany(topic -> scrapperRepository.findByUsernameAndUrlAndIsDoneFalse(topic.getUsername(), topic.getUrl()))
         .map(entity -> {
           entity.setIsDone(true);
           entity.setLinksFound(list);
