@@ -3,6 +3,7 @@ package app.josue.challenge_koombea.handler;
 import app.josue.challenge_koombea.domain.dto.ScrapperAddRequestDto;
 import app.josue.challenge_koombea.domain.dto.ScrapperListRequestDto;
 import app.josue.challenge_koombea.service.ScrapperService;
+import lombok.Setter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
 @Component
+@Setter
 public class ScrapperHandler {
 
   private final Logger log = LoggerFactory.getLogger(ScrapperHandler.class);
